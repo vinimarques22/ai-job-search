@@ -46,7 +46,7 @@ bun run .agents/skills/linkedin-search/cli/src/cli.ts search --location "<place>
 ```
 
 Key flags:
-- `--location <text>` / `-l <text>` — **required.** A LinkedIn place string, e.g. `"Mumbai, Maharashtra, India"`, `"Berlin, Germany"`, `"London, United Kingdom"`, or `"Remote"`.
+- `--location <text>` / `-l <text>` — **required.** A LinkedIn place string, e.g. `"São Paulo, Brazil"`, `"Rio de Janeiro, Brazil"`, or `"Remote"`.
 - `--query <text>` / `-q <text>` — keyword search (title, skill, role). Recommended.
 - `--jobage <days>` — posted within N days: `1`, `7`, `14`, `30`. Omit for all postings.
 - `--remote <mode>` — `remote`, `hybrid`, or `onsite` (workplace-type filter).
@@ -67,11 +67,11 @@ seniority, employment type, job function, industries, and apply link.
 ## Usage examples
 
 ```bash
-# Data engineer roles in Bengaluru, last 30 days
-bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "data engineer" -l "Bengaluru, Karnataka, India" --jobage 30 --format table
+# Data engineer roles in São Paulo, last 30 days
+bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "data engineer" -l "São Paulo, Brazil" --jobage 30 --format table
 
-# Product manager roles in Berlin, remote
-bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "product manager" -l "Berlin, Germany" --remote remote --format table
+# Product manager roles in Rio de Janeiro, remote
+bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "product manager" -l "Rio de Janeiro, Brazil" --remote remote --format table
 
 # Any role, fully remote
 bun run .agents/skills/linkedin-search/cli/src/cli.ts search -q "paralegal" -l "Remote" --format table

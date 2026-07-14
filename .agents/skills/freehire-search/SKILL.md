@@ -85,9 +85,9 @@ Key flags:
 - `--format json|table|plain` — default `json`.
 
 Facet filters (values come from freehire's controlled vocabularies; comma-separate for OR within a facet):
-- `--region <codes>` — macro-region, e.g. `global`, `eu`, `us`, `apac`, `latam`, `cis`. `--region eu,us`. Use `none` to match jobs whose region could **not** be resolved (see "Partial data" below).
-- `--country <codes>` — ISO-3166 alpha-2, e.g. `--country DE,GB`
-- `--city <names>` — city name(s), e.g. `--city Berlin`
+- `--region <codes>` — macro-region, e.g. `global`, `eu`, `us`, `apac`, `latam`, `cis`. `--region latam`. Use `none` to match jobs whose region could **not** be resolved (see "Partial data" below).
+- `--country <codes>` — ISO-3166 alpha-2, e.g. `--country BR`
+- `--city <names>` — city name(s), e.g. `--city "São Paulo"`
 - `--seniority <levels>` — `junior`, `middle`, `senior`, `staff`, `principal`, `lead`, …
 - `--category <cats>` — `backend`, `frontend`, `fullstack`, `devops`, `ml_ai`, `qa`, …
 - `--skill <names>` — canonical skill(s), e.g. `--skill go,kubernetes`
@@ -118,11 +118,11 @@ category, employment type, and salary.
 # Senior backend roles, table view
 bun run .agents/skills/freehire-search/cli/src/cli.ts search -q "backend engineer" --seniority senior --limit 10 --format table
 
-# Remote React roles in the EU
-bun run .agents/skills/freehire-search/cli/src/cli.ts search -q "react" --remote remote --region eu --format table
+# Remote React roles in LATAM
+bun run .agents/skills/freehire-search/cli/src/cli.ts search -q "react" --remote remote --region latam --format table
 
-# DevOps roles in Germany posted in the last 14 days
-bun run .agents/skills/freehire-search/cli/src/cli.ts search --category devops --country DE --jobage 14 --format table
+# DevOps roles in Brazil posted in the last 14 days
+bun run .agents/skills/freehire-search/cli/src/cli.ts search --category devops --country BR --jobage 14 --format table
 
 # ML/AI roles anywhere, fully remote
 bun run .agents/skills/freehire-search/cli/src/cli.ts search -q "machine learning" --category ml_ai --remote remote --format table
